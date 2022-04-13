@@ -1,9 +1,13 @@
 let screen = document.getElementById("screen");
-buttons = document.querySelectorAll("button");
-const calculator = document.getElementById("calculator");
+let buttons = document.querySelectorAll("button");
+const calculator = document.querySelector(".container");
+// const scintific = document.getElementById("sci");
+// scintific.addEventListener("click", scintificCalculator);
 
 let screenValue = "";
+
 for (item of buttons) {
+
   item.addEventListener("click", (e) => {
     buttonText = e.target.innerText;
     console.log("Button text is ", buttonText);
@@ -18,117 +22,48 @@ for (item of buttons) {
       screenValue += ".";
       screen.value = screenValue;
     } else if (buttonText == "=") {
-      screen.value = eval(screenValue);
-    } else if (buttonText == "sci") {
-        calculator.innerHTML = `
-        <div class="calculator" id="calculator">
-            <input type="text" name="screen" class="sciInput" id="screen"><hr>
-            <table>
-                <tr>
-                    <td><button>X<sup>y</sup></button></td>
-                    <td><button>lg</button></td>
-                    <td><button>ln</button></td>
-                    <td><button>(</button></td>
-                    <td><button>)</button></td>
-                </tr>
-                <tr>
-                    <td><button>&radic;X</button></td>
-                    <td><button class="operand">C</button></td>
-                    <td><button class="operand">←</button></td>
-                    <td><button class="operand">%</button></td>
-                    <td><button class="operand">/</button></td>
-                </tr>
-                <tr>
-                    <td><button>X!</button></td>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
-                    <td><button class="operand">x</button></td>
-                </tr>
-                <tr>
-                    <td><button>1/x</button></td>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button class="operand">-</button></td>
-                </tr>
-                <tr>
-                    <td><button>π</button></td>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td><button class="operand">+</button></td>
-                </tr>
-                <tr>
-                    <td><button>sci</button></td>
-                    <td><button>e</button></td>
-                    <td><button>0</button></td>
-                    <td><button>•</button></td>
-                    <td><button class="operand">=</button></td>
-                </tr>
-            </table>
-        </div>
-        
-        `;
+      screenValue = screenValue.replaceAll("lg(", "Math.log10(");
+      screenValue = screenValue.replaceAll("ln(", "Math.log(");
+      screenValue = screenValue.replaceAll("√(", "Math.sqrt(");
+      screenValue = screenValue.replaceAll("π", "Math.PI");
+      console.log(screenValue);
+      try{
+      screen.value = "= "+eval(screenValue);
+      }
+      catch{
+        screen.value = 'Error';
+      }
     } else if (buttonText == "←") {
       screenValue = screenValue.substring(0, screenValue.length - 1);
+      screen.value = screenValue;
+    } else if (buttonText == "π") {
+      screenValue += buttonText;
+      screen.value = screenValue;
+    } else if (buttonText == "e") {
+      buttonText = Math.E;
+      screenValue += `${buttonText}`.substring(0, 7);
+      screen.value = screenValue;
+    } else if (buttonText == "lg") {
+      screenValue += "Math.log10(".replace("Math.log10(", "lg(");
+      screen.value = screenValue;
+    } else if (buttonText == "ln") {
+      screenValue += "Math.log(".replace("Math.log(", "ln(");
+      screen.value = screenValue;
+    } else if (buttonText == "√x") {
+      screenValue += "Math.sqrt(".replace('Math.sqrt(','√(');
+      screen.value = screenValue;
+    } else if (buttonText == "1/x") {
+      screenValue += '(1/';
+      screen.value = screenValue;
+    } else if (buttonText == "xy") {
+      screenValue += 'Error';
+      screen.value = screenValue;
+    } else if (buttonText == "x!") {
+      screenValue += 'Error';
       screen.value = screenValue;
     } else {
       screenValue += buttonText;
       screen.value = screenValue;
     }
   });
-}
-
-function scintificCalculator() {
-  calculator.innerHTML = `
-        <div class="calculator" id="calculator">
-            <input type="text" name="screen" class="sciInput" id="screen"><hr>
-            <table>
-                <tr>
-                    <td><button>X<sup>y</sup></button></td>
-                    <td><button>lg</button></td>
-                    <td><button>ln</button></td>
-                    <td><button>(</button></td>
-                    <td><button>)</button></td>
-                </tr>
-                <tr>
-                    <td><button>&radic;X</button></td>
-                    <td><button class="operand">C</button></td>
-                    <td><button class="operand">←</button></td>
-                    <td><button class="operand">%</button></td>
-                    <td><button class="operand">/</button></td>
-                </tr>
-                <tr>
-                    <td><button>X!</button></td>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
-                    <td><button class="operand">x</button></td>
-                </tr>
-                <tr>
-                    <td><button>1/x</button></td>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button class="operand">-</button></td>
-                </tr>
-                <tr>
-                    <td><button>π</button></td>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td><button class="operand">+</button></td>
-                </tr>
-                <tr>
-                    <td><button>sci</button></td>
-                    <td><button>e</button></td>
-                    <td><button>0</button></td>
-                    <td><button>•</button></td>
-                    <td><button class="operand">=</button></td>
-                </tr>
-            </table>
-        </div>
-        
-        `;
 }
