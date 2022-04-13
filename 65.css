@@ -1,3 +1,13 @@
+@media only screen and (max-width: 600px) {
+    body {
+      background: #050305;
+    }
+    h1{
+        color:white;
+        font-size: 30px;
+    }
+  }
+
 body{
     background: #dcc4dc;
 
