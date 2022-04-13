@@ -1,22 +1,52 @@
-@media only screen and (max-width: 600px) {
+
+
+body {
+    background: #050305;
+}
+
+button:hover{
+    background:none;
+
+}
+  @media only screen and (min-width: 600px) {
     body {
-      background: #050305;
+        background: white;
     }
-    h1{
-        color:white;
-        font-size: 30px;
+    button{
+        border-radius: 10px;
+        border-style: outset;
+        font-size: 35px;
+        color: white;
+        border: none;
+        background: rgb(30, 34, 39);
     }
-  }
-
-body{
-    background: #dcc4dc;
-
+    button:hover{
+        background:rgb(22, 25, 28) ;
+    }
+}
+input{
+        border: none;
+        font-size: 37px;
+        color: white;
+        height: 65px;
+        width: 456px;
+        background: #050305;
+}
+button{
+        border-radius: 20px;
+        font-size: 35px;
+        color: white;
+        width: 102px;
+        height: 90px;
+        background: none;
+        border: none;
 }
 
 .container{
-    text-align: center;
-    margin-top:23px
+        text-align: center;
+        margin-top:23px
 }
+  
 
 table{
     margin: auto;
@@ -28,15 +58,6 @@ table{
 }
 
 
-input{
-    border: none;
-    font-size: 37px;
-    color: white;
-    height: 65px;
-    width: 456px;
-    background: #050305;
-}
-
 .sciInput{
     border: none;
     font-size: 37px;
@@ -46,30 +67,9 @@ input{
     background: #050305;
 }
 
-
-button{
-    border-radius: 20px;
-    font-size: 35px;
-    color: white;
-    background: #050709;
-    width: 102px;
-    height: 90px;
-    margin: 6px;
-}
-button:hover{
-    background: #151617;
-}
-
-
 .calculator{ 
     border: 4px solid #060a0a;
     background-color: #050305;
-    padding: 12px;
     border-radius: 10px;
     display: inline-block;
-}
-
-h1{
-    font-size: 40px;
-    font-family: 'Courier New', Courier, monospace;
 }
