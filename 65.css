@@ -1,0 +1,65 @@
+body{
+    background: #dcc4dc;
+
+}
+
+.container{
+    text-align: center;
+    margin-top:23px
+}
+
+table{
+    margin: auto;
+}
+
+.operand, #scintiifc{
+    color: rgb(220, 154, 12);
+    font-weight: bold;
+}
+
+
+input{
+    border: none;
+    font-size: 37px;
+    color: white;
+    height: 65px;
+    width: 456px;
+    background: #050305;
+}
+
+.sciInput{
+    border: none;
+    font-size: 37px;
+    color: white;
+    height: 60px;
+    width: 591px;
+    background: #050305;
+}
+
+
+button{
+    border-radius: 20px;
+    font-size: 35px;
+    color: white;
+    background: #050709;
+    width: 102px;
+    height: 90px;
+    margin: 6px;
+}
+button:hover{
+    background: #151617;
+}
+
+
+.calculator{ 
+    border: 4px solid #060a0a;
+    background-color: #050305;
+    padding: 12px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
