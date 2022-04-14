@@ -15,6 +15,9 @@ a {
   font-size: 40px;
   font-weight: bold;
 }
+.container {
+  margin-top: 23px;
+}
   @media only screen and (min-width: 600px) {
     body {
         background: white;
@@ -51,7 +54,6 @@ button{
 
 .container{
         text-align: center;
-        margin-top:23px
 }
   
 
